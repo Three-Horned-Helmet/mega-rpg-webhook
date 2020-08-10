@@ -15,7 +15,7 @@ dbl.webhook.on('vote', async vote => {
   console.log(`User with ID ${vote.user} just voted!`);
   let user;
   try {
-    user = User.findOne({'account.userId': vote.user})
+    user = await User.findOne({'account.userId': vote.user})
   } catch (err){
     console.error('error: ', err)
   }
