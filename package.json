@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Three-Horned-Helmet/mega-rpg-webhook#readme",
   "dependencies": {
     "dblapi.js": "^2.4.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.9.28"
   }
 }
