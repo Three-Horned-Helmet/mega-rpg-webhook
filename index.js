@@ -19,14 +19,12 @@ dbl.webhook.on('vote', async vote => {
   } catch (err){
     console.error('error: ', err)
   }
-  console.log(user,'user0')
 
   if (user){
-    console.log(user,'user')
-    if (user.hero.inventory.carrots === undefined){
-      user.hero.inventory.carrots = 0
+    if (user.hero.inventory.Carrots === undefined){
+      user.hero.inventory.Carrots = 0
     }
-    user.hero.inventory.carrots += 1
+    user.hero.inventory.Carrots += 1
     await user.save()
   }
   return false
