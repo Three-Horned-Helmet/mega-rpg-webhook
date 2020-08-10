@@ -1,0 +1,24 @@
+{
+  "name": "mega-rpg-webhook",
+  "version": "1.0.0",
+  "description": "webhook handler for topgg",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Three-Horned-Helmet/mega-rpg-webhook.git"
+  },
+  "author": "Three Horned Helmet (Fenrew and Ojself)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Three-Horned-Helmet/mega-rpg-webhook/issues"
+  },
+  "homepage": "https://github.com/Three-Horned-Helmet/mega-rpg-webhook#readme",
+  "dependencies": {
+    "dblapi.js": "^2.4.0",
+    "dotenv": "^8.2.0"
+  }
+}
