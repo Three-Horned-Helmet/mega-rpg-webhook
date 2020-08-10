@@ -19,6 +19,7 @@ dbl.webhook.on('vote', async vote => {
   } catch (err){
     console.error('error: ', err)
   }
+  console.log(user,'user0')
 
   if (user){
     console.log(user,'user')
