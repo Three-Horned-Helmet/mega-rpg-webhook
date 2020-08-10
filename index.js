@@ -21,6 +21,7 @@ dbl.webhook.on('vote', async vote => {
   }
 
   if (user){
+    console.log(user,'user')
     if (user.hero.inventory.carrots === undefined){
       user.hero.inventory.carrots = 0
     }
