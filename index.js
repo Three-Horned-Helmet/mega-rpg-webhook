@@ -25,14 +25,14 @@ dbl.webhook.on('vote', async vote => {
     const healPotionPrize = determineHealPotionPrize(user.hero.rank)
     const yesterday = new Date(Date.now() - 86400000)
 
-    if (user.hero.inventory.Carrot === undefined){
+    /* if (user.hero.inventory.Carrot === undefined){
       user.hero.inventory.Carrot = 0
-    }
+    } */
     if (user.hero.inventory[healPotionPrize] === undefined){
       user.hero.inventory[healPotionPrize] = 0
     }
 
-    user.hero.inventory.Carrot += 1
+    // user.hero.inventory.Carrot += 1
     user.hero.inventory[healPotionPrize]+=1
     user.cooldowns.miniboss = yesterday
     if (isWeekend){
