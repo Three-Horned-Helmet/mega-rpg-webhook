@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     hero: {
 		inventory:{
-            Carrots:{
+            Carrot:{
                 type: Number,
                 default: 0,
             }

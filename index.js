@@ -21,11 +21,53 @@ dbl.webhook.on('vote', async vote => {
   }
 
   if (user){
-    if (user.hero.inventory.Carrots === undefined){
-      user.hero.inventory.Carrots = 0
+    const isWeekend = new Date().getDay() % 6 == 0;
+    const healPotionPrize = determineHealPotionPrize(user.hero.rank)
+    const yesterday = new Date(Date.now() - 86400000)
+
+    if (user.hero.inventory.Carrot === undefined){
+      user.hero.inventory.Carrot = 0
     }
-    user.hero.inventory.Carrots += 1
+    if (user.hero.inventory[healPotionPrize] === undefined){
+      user.hero.inventory[healPotionPrize] = 0
+    }
+
+    user.hero.inventory.Carrot += 1
+    user.hero.inventory[healPotionPrize]+=1
+    user.cooldowns.miniboss = yesterday
+    if (isWeekend){
+      user.cooldowns.dungeon = yesterday
+    }
     await user.save()
   }
   return false
 });
+
+
+const determineHealPotionPrize = rank =>{
+  
+  const healPotions= ["Small Healing Potion","Large Healing Potion","Enourmous Healing Potion","Quality Healing Potion","Mega Healing Potion"]
+  let prize;
+  switch (true) {
+    case rank < 3:
+      prize= healPotions[0]
+      break;
+    case rank < 6:
+      prize= healPotions[1]
+      break;
+    case rank < 9:
+      prize= healPotions[2]
+      break;
+    case rank < 15:
+      prize= healPotions[3]
+      break;
+    case rank < 20:
+      prize= healPotions[4]
+      break;
+    default:
+      prize = healPotions[4]
+      break;
+  }
+  return prize
+
+}
